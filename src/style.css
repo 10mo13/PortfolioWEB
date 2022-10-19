@@ -1,0 +1,595 @@
+/* @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'); */
+
+* {
+  font-family: 'DotGothic16', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  font-family: PixelFont;
+  color: white;
+  /* overflow: hidden; */
+}
+
+.screen{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+.background{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192));
+}
+
+
+canvas {
+  position: fixed;
+  /* top: -210px; */
+  /* left: 0; */
+  z-index: 31; 
+  pointer-events: none;
+  /* position: absolute; */
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.8s, top 0.8s;
+}
+
+main {
+  /* position: fixed; */
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  /* margin-top: 100px; */
+  /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
+}
+
+section {
+  /* min-height: 100vh; */
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.flex {
+  /* padding: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* top */
+.TopTitle, .TopJob, .TopButton{
+  -webkit-user-select: none;  /*文字を選択不可に*/
+}
+
+.TopTitle{
+  text-align: center;
+  width: 100%;
+  color: white;
+  z-index: 20;
+  padding-top: 57vh;
+  font-size: 13vmin;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+}
+
+.TopJob{
+  /* position: relative; */
+  font-size: 4vmin;
+  font-weight: 500;
+  top: -1vmin;
+  padding-bottom: 1vh;
+}
+
+.TopButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  rgb(85, 162, 196);
+  height: 7vmin;  /* 60px */
+  width: 38vmin;  /* 300px */
+  border-radius: 50px;
+  z-index: 20;
+}
+
+.TopButton a,
+.TopButtonItem{
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4vmin;
+  height: 7vmin;
+  width: 100%;
+  border-radius: 50px;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: 0.8s;
+}
+.TopButtonItem:hover{
+  background:  rgb(65, 131, 159);
+  font-weight: 900;
+}
+
+
+/*Page AutoScroll*/
+.box{
+  opacity: 0;
+  transition: opacity 1s;
+  color: #fff;
+  /* height: 100vh; */
+  width: 100vw;
+  padding: 40px;
+  position: relative;
+  /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
+}
+.box1{
+  height: 100vh;
+  /* background: #F43959; */
+  opacity: 0;
+  transition: opacity 1s;
+}
+.box2{
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 1s;
+  /* background: #4CA4CF; */
+  /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
+}
+.box3{
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s;
+  /* background: #e5cf54; */
+  /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
+}
+.box4{
+  /* margin-top: -30vh; */
+  height: 100vh;
+  top: 0vh;
+  opacity: 0;
+  transition: opacity 1s;
+  /* background: #45CB99; */
+  background: #5a5a5a;
+  position: fixed;
+}
+.box1.active,
+.box2.active,
+.box3.active,
+.box4.active{
+  opacity: 1;
+}
+
+/*PageNation*/
+.pagenation{
+  padding: 30px;
+  position: fixed;
+  right: 0;
+  top: 40vh;
+  z-index: 50;
+}
+.pagenation li{
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+.pagenation a{
+  display: block;
+  height: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  width: 10px;
+}
+.pagenation a.active{
+  background: rgb(255, 255, 255);
+}
+
+
+/*Header*/
+header {
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 25;
+  opacity: 0;
+}
+
+.title {
+  color: #fff;
+  margin-left: 30px;
+  font-size: 4vmin;
+  z-index: 20;
+}
+
+.pc-nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+.pc-nav li {
+  margin: 0 0 0 25px;
+  font-size: 18px;
+}
+
+.HeadButtonItem{
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+  font-size: 2vw;  /*18px*/
+  transition: 0.5s;
+  position: relative;
+  /* font-weight: 600; */
+}
+.HeadButtonItem:hover{
+  color: rgb(242, 119, 144);
+  font-weight: 900;
+}
+
+nav.pc-nav {
+  margin: 0 0 0 auto;
+  margin-right: 5vw;
+}
+
+.RightBottom{
+  font-family: 'Silkscreen', cursive;
+  font-size: 12vmin;  /*12vw*/
+  /* font-weight: 600; */
+  position: absolute;
+  right: 50px;
+  bottom: 7vh;
+  text-align: right;
+  line-height: 80%;
+}
+
+.LeftBottom{
+  font-family: 'Silkscreen', cursive;
+  font-size: 11vmin;
+  /* font-weight: 600; */
+  position: fixed;
+  left: 50px;
+  bottom: 7vmin;
+  text-align: left;
+  line-height: 80%;
+  z-index: 35;
+}
+.box4 .LeftBottom{
+  font-size: 8vmin;
+}
+
+/*About*/
+
+.Profile h5,
+.skill{
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+  /* left: 10%; */
+  color: rgb(243, 248, 250);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 479px){
+  .Profile{
+    position: absolute;
+    font-size: 5vmin;
+    font-weight: 600;
+    top: 35vh;
+    /* left: 50%; */
+    z-index: 40;
+    width: 65vw;
+    text-align: left;
+    text-shadow: 2px 2px 6px rgba(90, 101, 105, 0.756);
+  }
+  .Profile h5,
+  .skill{
+    margin-top: 15px;
+    width: 50vw;
+    font-size: 2.6vmin;
+  }
+  
+  .skill{
+    margin-top: 5vh;
+    font-size: 3.5vmin;
+  }
+  
+  .skill h5{
+    /* position: relative; */
+    color: rgb(243, 249, 250);
+    text-align: left;
+    margin-top: 5px;
+    width: 50vw;
+    font-size: 3.2vmin;
+  }
+}
+
+@media screen and (min-width: 479px){
+  .Profile{
+    position: absolute;
+    font-size: 4vmin;
+    font-weight: 600;
+    top: 15vh;
+    left: 12%;
+    z-index: 40;
+    width: 51vw;
+    text-align: left;
+    text-shadow: 2px 2px 6px rgba(90, 101, 105, 0.756);
+  }
+  .Profile h5,
+  .skill{
+    margin-top: 35px;
+    width: 40vw;
+    font-size: 2.0vmin;
+  }
+  
+  .skill{
+    margin-top: 12vh;
+    font-size: 2.5vmin;
+  }
+  
+  .skill h5{
+    /* position: relative; */
+    color: rgb(243, 249, 250);
+    text-align: left;
+    margin-top: 5px;
+    width: 40vw;
+    font-size: 2.2vmin;
+  }
+}
+
+
+/* Work */
+.workTitle{
+  margin-top: 5vh;
+  font-size: 6vw;
+  font-weight: 600;
+}
+
+.container {
+  width: 100vw;
+  /* min-width: 786px;  コンテンツが一列にならないように最小値を決める Defalt510px → 786px */
+  height: auto;  /*Default 52vh?*/
+  /* position: relative; */
+  top: 2vh;
+  margin-top: 2vh;
+  /* background:  rgba(255, 255, 255, 0.721); */
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
+  z-index: 29;
+
+  padding-top: 2vh;
+  /* margin-top: 30px; */
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+::-webkit-scrollbar {
+  /* border-radius: 10px;
+  width: 10px; */
+  display: none;
+}
+/* ::-webkit-scrollbar-thumb {
+  background-color: #eeeeee00;
+  border-radius: 10px;
+} */
+
+.mask {
+  position: relative;
+  height: auto;  /*Default 58vh*/
+  z-index: 10;
+  margin-bottom: 30vh;
+  /* -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 6vh,
+    black 7vh,
+    rgb(0, 0, 0) -webkit-calc(100% - 7vh),
+    rgba(0, 0, 0, 0) -webkit-calc(100% - 6vh)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 6vh,
+    black 7vh,
+    rgb(0, 0, 0) -webkit-calc(100% - 7vh),
+    rgba(0, 0, 0, 0) -webkit-calc(100% - 6vh)
+  ); */
+}
+.container:after {
+  content: "";
+  display: block;
+  width: 66%;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％ */
+  height: 0;
+}
+
+.container-flex-start {
+  align-content: flex-start;
+  justify-content: space-around;
+  margin-bottom: 12vh;
+}
+.item {
+  /* white-space: nowrap; */
+  /* position: relative; */
+  margin: 2vw;
+  margin-bottom: 40px;
+  width: 25vw;
+  /* height: 15vw; */
+  min-width: 200px;
+  aspect-ratio: 5 / 3;
+  background-color: #00a5e7;
+  z-index: 10;
+  position: relative;
+  transition: border 0.1s;
+}
+.item:hover{
+  /* background-color: #00e745; */
+  border: solid;
+  border-color: #ececec;
+  cursor: pointer;
+}
+.ItemTitle{
+  font-family: 'Noto Sans JP', sans-serif;
+  width: 100%;
+  font-size: 2vmin;
+  position: absolute;
+  top: max(calc(25vw / 5 * 3), 120px);  /*最小値はitemのheight(つまり200px / 5 * 3)で120px*/
+  
+}
+
+.hideBox{
+  position: fixed;
+  background:  linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192));
+  width: 100vw;
+  height: 24vmin; /*24vh*/
+  z-index: 20;
+  bottom: 0;
+}
+
+/*mordal*/
+.modalWindow {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+}
+.modal_bg {
+  background: rgba(50, 50, 50, 0.333);  /* メインコンテンツを暗転させる */
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  z-index: 40;
+  overflow-y: scroll;
+}
+.modalScroll {
+  color: #373737;
+  background: #fff;  /* ウィンドウの背景色 */
+  height: 90vh;  /* ウィンドウのサイズはお好みでvh、vwを使用してください */
+  width: 90vw;
+  max-height: 800px;
+  padding: 20px;
+  border-radius: 20px;  /* 角を丸くします */
+  z-index: 45;
+}
+
+/* 画面の中央に寄せるCSS。ウィンドウとボタンに適応 */
+.button,
+.modalScroll,
+.ScrollContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.closeDescription{
+  font-family: 'Noto Sans JP', sans-serif;
+  pointer-events: none;
+  position: relative;
+  top: 88vh;
+  font-size: 2vmin;
+  color: rgb(199, 199, 199);
+}
+
+/* ウィンドウ内のコンテンツ。 */
+.ScrollContent {
+  overflow-y: scroll;  /* コンテンツ量が多くなってもスクロールできるようになります */
+  height: 95%;  /* ウィンドウ内部のコンテンツの高さ */
+  width: 95%;
+  border-radius: 20px;
+}
+.modal_content{
+  color: rgb(49, 49, 49);
+  text-align: center;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.content h3{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 5vmin;
+  margin: 3vmin;
+}
+.content h6{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 2.2vmin;
+}
+
+/*Contact*/
+@media screen and (max-width: 701px){
+  .contact{
+    font-size: 9vmin;
+    font-weight: 600;
+    position: absolute;
+    margin-top: 95vh;
+    text-align: left;
+    left: 30%;
+  }
+  
+  .contactDescription{
+    font-size: 3vmin;
+    margin-top: 110vh;
+    position: absolute;
+    text-align: left;
+    left: 30%;
+    width: 45vw;
+  }
+  
+  .mail{
+    font-size: 3vmin;
+    position: absolute;
+    text-align: left;
+    left: 30%;
+    margin-top: 120vh;
+    width: 45vw;
+  }
+}
+@media screen and (min-width: 701px){
+  .contact{
+    font-size: 7vmin;
+    font-weight: 600;
+    position: absolute;
+    margin-top: 40vh;
+    text-align: left;
+    left: 50%;
+  }
+  
+  .contactDescription{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2vmin;
+    margin-top: 60vh;
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    width: 35vw;
+  }
+  
+  .mail{
+    font-size: 2vmin;
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    margin-top: 75vh;
+    width: 35vw;
+  }
+}

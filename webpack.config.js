@@ -1,3 +1,5 @@
+const loader = require("css-loader");
+
 module.exports = {
     // モード値を production に設定すると最適化された状態で、
     // development に設定するとソースマップ有効でJSファイルが出力される
@@ -25,9 +27,25 @@ module.exports = {
     rules: [
       {
         // 拡張子 .js の場合
-        test: /\.js$/,
-        use: [
+        test: /\.css$/,
+        // //css-loader setting
+        // loader: "css-loader",
+        // options: {
+        //   options: { url: false }
+        // },
+
+        // //css-loader
+        // use:[
+        //   "style-loader",
+        //   {
+        //     loader: "css-loader",
+        //     options: { url: false }
+        //   }
+        // ]
+        use:
+        [
           {
+            
             // Babel を利用する
             loader: "babel-loader",
             // Babel のオプションを指定する
@@ -37,7 +55,9 @@ module.exports = {
                 "@babel/preset-env"
               ]
             }
-          }
+          },
+          'style-loader',
+            {loader: 'css-loader', options: {url: false}},
         ]
       }
     ]
