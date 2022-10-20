@@ -1,12 +1,12 @@
 {
-  "name": "portfolioweb_02",
+  "name": "portfolioweb_03",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "webpack serve --mode development --watch"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,5 @@
     "omggif": "^1.0.10",
     "three": "^0.145.0",
     "three-trackballcontrols": "^0.9.0"
-  },
-  "private": true
+  }
 }

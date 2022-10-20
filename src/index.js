@@ -1,12 +1,10 @@
 import "./style.css";
-// import css from "style.css";
 import * as THREE from "three";
-import GifLoader from './three-gif-loader/lib/gif-loader';  //temporary
+import GifLoader from './three-gif-loader/gif-loader';  //temporary
 // オブジェクトをロードするための Loader をimportしておきます
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
-import { GLTFLoader } from './three-gif-loader/lib/GLTFLoader.js';
-
+import { GLTFLoader } from './three-gif-loader/GLTFLoader.js';
 import TrackballControls from 'three-trackballcontrols';
 
 const scene = new THREE.Scene();
@@ -19,6 +17,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
+
 
 
 
@@ -543,3 +542,28 @@ function ClickTopButton(){
     $.scrollify.move(3);
   }
 }
+
+
+
+  // $('.container').hover(
+  //   function(){
+  //     $.scrollify.disable();
+  //     $("#webgl").append("<style>::-webkit-scrollbar-thumb {background-color: #eeeeee;}</style>");  //ホバー時にスクロールバー表示
+      
+  //   },
+  //   function(){
+  //     $.scrollify.enable();
+  //     $("#webgl").append("<style>::-webkit-scrollbar-thumb {background-color: #eeeeee00;}</style>");
+  //   }
+  // );
+  
+
+
+// $('.container').hover(
+//   function(){
+//     $.scrollify.disable();
+//   },
+//   function(){
+//     $.scrollify.enable();
+//   }
+//  );

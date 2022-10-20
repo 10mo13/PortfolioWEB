@@ -1,65 +1,34 @@
-const loader = require("css-loader");
+let path = require("path");
 
 module.exports = {
-    // モード値を production に設定すると最適化された状態で、
-    // development に設定するとソースマップ有効でJSファイルが出力される
-    mode: "development",
-  
-    // ローカル開発用環境を立ち上げる
-    // 実行時にブラウザが自動的に localhost を開く
-    devServer: {
-      // contentBase: "dist",
-      // open: true
-      static: {
-        directory: './dist'
-      },
-    },
-    
-    entry: "./src/index.js",
-  // ファイルの出力設定
+  mode: "development",
+
+  entry: "./src/index.js",
+
   output: {
-    //  出力ファイルのディレクトリ名
     path: `${__dirname}/dist`,
-    // 出力ファイル名
     filename: "main.js"
   },
   module: {
     rules: [
       {
-        // 拡張子 .js の場合
-        test: /\.css$/,
-        // //css-loader setting
-        // loader: "css-loader",
-        // options: {
-        //   options: { url: false }
-        // },
+        //cssだけだとエラーになるので注意。ちゃんと(scss|css)と書く
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 
-        // //css-loader
-        // use:[
-        //   "style-loader",
-        //   {
-        //     loader: "css-loader",
-        //     options: { url: false }
-        //   }
-        // ]
-        use:
-        [
-          {
-            
-            // Babel を利用する
-            loader: "babel-loader",
-            // Babel のオプションを指定する
-            options: {
-              presets: [
-                // プリセットを指定することで、ES2020 を ES5 に変換
-                "@babel/preset-env"
-              ]
-            }
-          },
-          'style-loader',
-            {loader: 'css-loader', options: {url: false}},
-        ]
-      }
-    ]
-  }
-  };
+  devServer: {
+    //contentBaseは古いバージョンなのでこっちの書き方で
+    static: {
+        directory: './dist'
+    },
+    // contentBase: path.join(__dirname, "public"),
+
+    //なんかなくてもライブリロードで動く
+    //publicPath: "/dist/", // livereloadに必要、bundleしたファイルの置き場を指定
+    //watchContentBase: true, // livereloadに必要、contentBaseにあるファイルの変更を検出するための設定
+    open: true, // 起動時にブラウザを自動で開く
+  },
+};
