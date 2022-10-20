@@ -40,20 +40,20 @@ const wrap = new THREE.Object3D();
 let wrapRotaSpeed = 0.01;
 
 // planeの画面アニメーション
-// const TopAnim = ["01.png", "02.png", "03.png"];
-// var flame = 0;
+const TopAnim = ["01.png", "02.png", "03.png"];
+var flame = 0;
 
-// function DisplayAnimetion(){
-//   // console.log(flame);
-// const Display = scene.getObjectByName("plane"); //planeという名前を付けたオブジェクトを探す
-// Display.material.map = new THREE.TextureLoader().load("texture/" + TopAnim[flame]);  //変更後のテクスチャ
-// Display.material.needsUpdate = true; // アップデート
-// flame += 1;
+function DisplayAnimetion(){
+  // console.log(flame);
+const Display = scene.getObjectByName("plane"); //planeという名前を付けたオブジェクトを探す
+Display.material.map = new THREE.TextureLoader().load("texture/" + TopAnim[flame]);  //変更後のテクスチャ
+Display.material.needsUpdate = true; // アップデート
+flame += 1;
 
-// if(flame == TopAnim.length){
-//   flame = 0;
-// }
-// }
+if(flame == TopAnim.length){
+  flame = 0;
+}
+}
 // setInterval(DisplayAnimetion, 500);
 
 
