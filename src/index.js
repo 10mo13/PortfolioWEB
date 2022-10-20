@@ -33,13 +33,13 @@ plane.name = "plane";
 
 //ゲーム画面のplane
 const geometry = new THREE.PlaneGeometry( 1, 1 );
-// const material = new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load("texture/01.png")} );
+const material = new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load("texture/01.png")} );
 
-// // グループを作る
-// const wrap = new THREE.Object3D();
-// let wrapRotaSpeed = 0.01;
+// グループを作る
+const wrap = new THREE.Object3D();
+let wrapRotaSpeed = 0.01;
 
-// // planeの画面アニメーション
+// planeの画面アニメーション
 // const TopAnim = ["01.png", "02.png", "03.png"];
 // var flame = 0;
 
