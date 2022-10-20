@@ -24,36 +24,36 @@ document.body.appendChild( renderer.domElement );
 //背景色のアルファ値を透過になるよう設定
 renderer.setClearColor(0x000000, 0);
 
-const plane = new THREE.Mesh( geometry, material );
-// plane.rotation.z = Math.PI / 2;
-plane.position.set(0.2, 10, 0);
-plane.scale.set(5.2, 5.2, 5.2);
-plane.name = "plane";
-// scene.add(plane);
+// const plane = new THREE.Mesh( geometry, material );
+// // plane.rotation.z = Math.PI / 2;
+// plane.position.set(0.2, 10, 0);
+// plane.scale.set(5.2, 5.2, 5.2);
+// plane.name = "plane";
+// // scene.add(plane);
 
-//ゲーム画面のplane
-const geometry = new THREE.PlaneGeometry( 1, 1 );
-const material = new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load("texture/01.png")} );
+// //ゲーム画面のplane
+// const geometry = new THREE.PlaneGeometry( 1, 1 );
+// const material = new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load("texture/01.png")} );
 
-// グループを作る
-const wrap = new THREE.Object3D();
-let wrapRotaSpeed = 0.01;
+// // グループを作る
+// const wrap = new THREE.Object3D();
+// let wrapRotaSpeed = 0.01;
 
-// planeの画面アニメーション
-const TopAnim = ["01.png", "02.png", "03.png"];
-var flame = 0;
+// // planeの画面アニメーション
+// const TopAnim = ["01.png", "02.png", "03.png"];
+// var flame = 0;
 
-function DisplayAnimetion(){
-  // console.log(flame);
-const Display = scene.getObjectByName("plane"); //planeという名前を付けたオブジェクトを探す
-Display.material.map = new THREE.TextureLoader().load("texture/" + TopAnim[flame]);  //変更後のテクスチャ
-Display.material.needsUpdate = true; // アップデート
-flame += 1;
+// function DisplayAnimetion(){
+//   // console.log(flame);
+// const Display = scene.getObjectByName("plane"); //planeという名前を付けたオブジェクトを探す
+// Display.material.map = new THREE.TextureLoader().load("texture/" + TopAnim[flame]);  //変更後のテクスチャ
+// Display.material.needsUpdate = true; // アップデート
+// flame += 1;
 
-if(flame == TopAnim.length){
-  flame = 0;
-}
-}
+// if(flame == TopAnim.length){
+//   flame = 0;
+// }
+// }
 // setInterval(DisplayAnimetion, 500);
 
 
