@@ -13,6 +13,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   /* font-family: "Poppins", sans-serif; */
+  -webkit-user-select: none;  /*文字を選択不可に*/
 }
 html {
   height: -webkit-fill-available;
@@ -78,9 +79,9 @@ section {
 }
 
 /* top */
-.TopTitle, .TopJob, .TopButton{
-  -webkit-user-select: none;  /*文字を選択不可に*/
-}
+/* .TopTitle, .TopJob, .TopButton{
+  
+} */
 
 .TopTitle{
   text-align: center;
@@ -424,7 +425,7 @@ nav.pc-nav {
 .container:after {
   content: "";
   display: block;
-  width: 66%;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％ */
+  width: 33%;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％、一個は33 */
   height: 0;
 }
 
@@ -529,7 +530,7 @@ nav.pc-nav {
   color: rgb(49, 49, 49);
   text-align: center;
   text-align: center;
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 150px;
 }
 .content h3{
@@ -540,16 +541,21 @@ nav.pc-nav {
 .content h6{
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 2.2vmin;
+  text-align: left;
+  width: 90%;
+  padding-left: 10vw;
 }
 
 /*Contact*/
-.contact,
+
+
+@media screen and (max-width: 701px){
+  .contact,
 .contactDescription,
 .mail{
   min-height: -webkit-fill-available;
 }
 
-@media screen and (max-width: 701px){
   .contact{
     font-size: 9vmin;
     font-weight: 600;
