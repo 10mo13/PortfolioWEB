@@ -14,6 +14,9 @@
   scrollbar-width: none;
   /* font-family: "Poppins", sans-serif; */
 }
+html {
+  height: -webkit-fill-available;
+}
 
 body {
   font-family: PixelFont;
@@ -540,6 +543,10 @@ nav.pc-nav {
 }
 
 /*Contact*/
+.contact{
+  min-height: -webkit-fill-available;
+}
+
 @media screen and (max-width: 701px){
   .contact{
     font-size: 9vmin;
