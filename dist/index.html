@@ -102,11 +102,11 @@
         <div class="item">3<div class="ItemTitle">技術記事</div></div>
         <div class="item">4<div class="ItemTitle">3D空間におけるAI</div></div>
         <div class="item">5<div class="ItemTitle">複数のものをカメラに収める</div></div>
-        <div class="item">6<div class="ItemTitle">UE4インタラクティブサウンド</div></div>
-        <div class="item">7<br><div class="ItemTitle">UnityGame</div></div>
-        <div class="item">8<br><div class="ItemTitle">Music</div></div>
+        <div class="item">6<div class="ItemTitle">UnityGame</div></div>
+        <div class="item">7<br><div class="ItemTitle">Music</div></div>
+        <div class="item">8<br><div class="ItemTitle">3D Pixel</div></div>
         <div class="item">9<br><div class="ItemTitle">other hoby</div></div>
-        <div class="item">10<br><div class="ItemTitle">3D Pixel</div></div>
+        <!-- <div class="item">10<br><div class="ItemTitle">3D Pixel</div></div> -->
         <!-- <div class="item">11<br></div> -->
         <!-- <div class="item">12</div> -->
         <!-- <div class="item">13</div> -->
@@ -132,7 +132,19 @@
                <p>
                <!-- Click on the outer frame to close -->
                <h3>ポートフォリオサイト</h3>
+               <h6>（画像1-1）</h6>
                <h6>自作のポートフォリオサイトです。</h6>
+               <h6>使用技術：html、css、js、Three.js、webpack、jQuery、Scllorify</h6>
+               <h6>素材制作に使用したソフト：MagicBoxel、Blender、ClipStudio</h6><br>
+               <h3>3Dモデルについて</h3>
+               <h6>3Dオブジェクトのゲーム機はMagicBoxelでモデリングし、Blenderで影をベイクしたものです。three-trackballcontrolsを使用することで、マウスでつかんで回転できます（TOP画面限定）。</h6><br>
+               <h6>また、ページ移行時にゲーム機が滑らかに場所を移動していますが、これは自作の関数で２点間を動くLerp処理を使用しています。</h6>
+               <h6>(画像2　GIF埋め込むのは面倒)</h6>
+
+               <h3>その他</h3>
+               <h6>・デプロイはnetlifyを使用しています。</h6>
+               <h6>・ゲーム機の画面で流れているGIFも自作したもので、ClipStudioで制作しています。Three.jsでもGIFが動くようにomggifを使用しています。ゲーム機のオブジェクトとグループ化して、Three.jsで一緒に動かしています。</h6>
+               <h6></h6>
                <!-- <h1>1 Content2</h1>
                <h1>1 Content3</h1>
                <h1>1 Content4</h1> -->
@@ -143,7 +155,11 @@
               <div class="content2 content">
                 <p>
                   <h3>TaskTimer</h3>
-                  <h6>自作のWEBアプリです。</h6>
+                  <h6>（画像2-1）</h6>
+                  <h6>自作のWEBアプリです。作業用BGMを流すことができるアプリで、作業中と休憩中で別のBGMをYoutubeから流すことができます。動画の音はフェードしてスムーズに切り替わるので違和感なく作業に集中できます。</h6>
+                  <h6>（Zennリンクカード）</h6>
+                  <h6>（Gitリンクカード）</h6>
+                  
                 </p>
                 <a class="js-modal-close" href="">close</a>
               </div>
@@ -151,11 +167,67 @@
               <div class="content3 content">
                 <p>
                   <h3>技術記事</h3>
-                  <h6>得た知識をZennにまとめています。CodeSandBoxを利用し、その場で動作確認できるようにしています。</h6>
+                  <h6>制作の際に得た知識をZennにまとめています。主にCSSまわりです。</h6>
+                  <h6>CodeSandBoxを利用し、その場で動作確認できるようにしています。</h6>
+                  <h6>（リンクカード）</h6>
                 </p>
                 <a class="js-modal-close" href="">close</a>
               </div>
 
+              <div class="content4 content">
+                <p>
+                  <h3>3D空間におけるAI</h3>
+                  <h6>UE4で制作したAIです。宙に浮かぶタイプのAIで、目的地へ向かって3D空間上で移動します。UE4で用意されているAIは平面の移動しかできないので、空を飛ぶタイプの敵を制御するにあたって制作しました。</h6>
+                  <h6>（Youtubeリンク）</h6>
+
+                  <h3>概要</h3>
+                  <h6>・UE4でフリーで使用できるHotPursuitプラグインをベースに、コードを加えて改善したものになります。今回の制作した機能は、HotPursuitよりも大型のAI、広いマップで使用ができます。代わりに下準備でマップにポイントを配置するので、多少手間が増えます。ルート検索時間が40秒かかっていたものが1秒以下でルート検索できるようになります。</h6>
+                  <h6>・HotPursuitが大型のAIに向いていない主な理由は、壁や床の近くに目的地があると検索が困難になるためです。今回制作したブループリントはその点も改善しました。AIと同じサイズの衝突判定を目的地に取らせ、床や壁に一番近いポイントを新たな目的地に設定するようにしました。特にプレイヤーなど動くターゲットでも対応しています。</h6>
+                  <h6>・処理を軽くするため、HotPursuitに中継地点を用意し、ダイクストラ法でそれらの最短経路を探させることで処理を軽くしています。</h6>
+                </p>
+                <a class="js-modal-close" href="">close</a>
+              </div>
+
+              <div class="content5 content">
+                <p>
+                  <h3>複数のものをカメラに収めるシステム</h3>
+                  <h6>UE4で制作したブループリントシステムです。設定した複数の対象が均等に収まるように自動でカメラの距離を調整します。</h6>
+                  <h6>（Youtubeリンク）</h6>
+                </p>
+                <a class="js-modal-close" href="">close</a>
+              </div>
+
+              <div class="content6 content">
+                <p>
+                  <h3>UnityGame</h3>
+                  <h6>（画像6-1）</h6>
+                  <h6>Unityで制作したミニゲームです。ジャンルは横スクロール謎解きアクションです。</h6>
+                  <h6>（UnityRoomリンク）</h6><br>
+                  <h6>基本操作は左右の移動と、マウスのクリックのみのシンプルなアクションです。マウスのドラックで線が生成できます。タイトルは無音なので、開始時の音量に注意してください。</h6><br>
+                  <h6>キャラのイラストや爆発エフェクトはClipStudioで作成しました。音楽や効果音はCubaseを使用しています。</h6>
+                  <h6>※お使いのPCによっては書いた線や、物理の挙動が意図しないものになるかもしれません。</h6>
+                </p>
+                <a class="js-modal-close" href="">close</a>
+              </div>
+
+              <div class="content7 content">
+                <p>
+                  <h3>Music</h3>
+                  <h6>過去に作曲したものをまとめました。</h6>
+                  <h6>（Youtubeリンクを縦に並べていく）</h6>
+                </p>
+                <a class="js-modal-close" href="">close</a>
+              </div>
+
+              <div class="content8 content">
+                <p>
+                  <h3>3D PixelArt</h3>
+                  <h6>個人製作しているゲームのグラフィックの進捗です。</h6>
+                  <h6>（Youtubeリンク）</h6>
+                </p>
+                <a class="js-modal-close" href="">×</a>
+              </div>
+              
              </div>
           </div>
           <div class="closeDescription">外枠をクリックで閉じる</div>
