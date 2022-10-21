@@ -231,7 +231,7 @@ header {
 }
 
 .pc-nav li {
-  margin: 0 0 0 25px;
+  margin: 0 0 0 5vmin;
   font-size: 18px;
 }
 
@@ -240,7 +240,7 @@ header {
   border: none;
   background: rgba(255, 255, 255, 0);
   color: white;
-  font-size: 2vw;  /*18px*/
+  font-size: 2.5vmin;  /*18px*/
   transition: 0.5s;
   position: relative;
   /* font-weight: 600; */
@@ -434,10 +434,11 @@ nav.pc-nav {
   /* position: relative; */
   margin: 2vw;
   margin-bottom: 40px;
-  width: 25vw;
-  /* height: 15vw; */
+  width: 24vw;
+  height: 14.5vw;
   min-width: 200px;
-  aspect-ratio: 5 / 3;
+  min-height: 120px;
+  /* aspect-ratio: 5 / 3; */
   background-color: #00a5e7;
   z-index: 10;
   position: relative;
