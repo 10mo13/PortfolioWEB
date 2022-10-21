@@ -244,6 +244,7 @@ header {
   transition: 0.5s;
   position: relative;
   /* font-weight: 600; */
+  z-index: 50;
 }
 .HeadButtonItem:hover{
   color: rgb(242, 119, 144);
