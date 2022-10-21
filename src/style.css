@@ -543,7 +543,9 @@ nav.pc-nav {
 }
 
 /*Contact*/
-.contact{
+.contact,
+.contactDescription,
+.mail{
   min-height: -webkit-fill-available;
 }
 
