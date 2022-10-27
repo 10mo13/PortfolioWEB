@@ -425,7 +425,7 @@ nav.pc-nav {
 .container:after {
   content: "";
   display: block;
-  width: 33%;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％、一個は33 */
+  width: 33vmin;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％、一個は33 */
   height: 0;
 }
 
@@ -493,9 +493,9 @@ nav.pc-nav {
 .modalScroll {
   color: #373737;
   background: #fff;  /* ウィンドウの背景色 */
-  height: 90vh;  /* ウィンドウのサイズはお好みでvh、vwを使用してください */
+  height: 88vh;
   width: 90vw;
-  max-height: 800px;
+  /* max-height: 800px; */
   padding: 20px;
   border-radius: 20px;  /* 角を丸くします */
   z-index: 45;
@@ -513,7 +513,7 @@ nav.pc-nav {
 .closeDescription{
   font-family: 'Noto Sans JP', sans-serif;
   pointer-events: none;
-  position: relative;
+  position: fixed;
   top: 88vh;
   font-size: 2vmin;
   color: rgb(199, 199, 199);
@@ -538,13 +538,87 @@ nav.pc-nav {
   font-size: 5vmin;
   margin: 3vmin;
 }
-.content h6{
+.content h6,
+.content .centerDiscription{
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 2.2vmin;
-  text-align: left;
   width: 90%;
   padding-left: 10vw;
 }
+.content h6{
+  text-align: left;
+}
+.content .centerDiscription{
+  text-align: center;
+}
+.content img{
+  /* margin: 2vmin; */
+  height: 50vmin;
+}
+.linkCard{
+  margin: 5vmin;
+  position: relative;
+  width: 60vw;
+  height: 10vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 3px solid #5a5a5a;
+  overflow: hidden;
+  transition: width 0.6s;
+  /* transition: border 0.5s; */
+}
+.linkCard:hover{
+  width: 62vw;
+  /* height: 11vw; */
+  /* border: 4px solid #898989; */
+}
+.link{
+  cursor: pointer;
+  display: block;
+  height: 100%;
+}
+.picture{
+  background-color: #00a6e700;
+  height: 12vw;
+  width: 12vw;
+  /* text-align: center; */
+}
+.picture img{
+  /* width: 100%; */
+  height: 100%;
+  max-width: 12vw;
+  max-height: 12vw;
+  /* object-fit:cover; */
+  overflow: hidden;
+  border-right: 2px solid #5a5a5a;
+}
+.item img{
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+.linkTitle{
+  font-family: 'Noto Sans JP', sans-serif;
+  text-align: left;
+  font-size: 2.2vmin;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  bottom: 0;
+  left: 30%;
+  margin: auto;
+}
+a{
+  text-decoration: none;
+  color: #373737;
+}
+.musicMovie{
+  margin-top: 6vmin;
+  margin-bottom: 8vmin;
+  width: 60%;
+  aspect-ratio: 16/9;
+}
+
 
 /*Contact*/
 
