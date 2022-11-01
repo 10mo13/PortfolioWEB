@@ -488,7 +488,7 @@ var current = 0;
 $.scrollify({
     section:".box",
     setHeights: false,
-    // overflowScroll: true,
+    overflowScroll: true,
     standardScrollElements: '.box3',  //box3ではScrollifyを使わない
     before:function(i,box){  //ページ移動する前に実行
         fromVar = current;  //移行前、何ページにいたのか記録
