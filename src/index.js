@@ -117,9 +117,9 @@ wrap.rotation.set(-0.5, -0.4, -0.4);
 const loader = new GifLoader();
 
 // load a image resource
-const texture2 = loader.load(
+const TopTexture = loader.load(
   // resource URL
-  'texture/pixcelArtGif_01_2022_0924.gif',
+  'texture/Top_01.gif',  //'texture/pixcelArtGif_01_2022_0924.gif'
 
   // onLoad callback
   function (reader) {
@@ -140,20 +140,92 @@ const texture2 = loader.load(
   }
 );
 const material2 = new THREE.MeshBasicMaterial({
-  map: texture2,
+  map: TopTexture,
   transparent: true
 });
 
 //ゲーム画面のplane
 const geometry2 = new THREE.PlaneGeometry( 1, 1 );
-const material3 = new THREE.MeshBasicMaterial( {map: texture2,
+const material3 = new THREE.MeshBasicMaterial( {map: TopTexture,
   transparent: true} );
-const plane2 = new THREE.Mesh( geometry2, material3 );
-plane2.name = "plane";
-plane2.position.set(0.2, 1, -0.07);  //-0.07以上後ろに下げるとうぶジェクトに埋まる
-plane2.scale.set(5.2, 5.2, 5.2);
-scene.add(plane2);
-wrap.add(plane2);
+const TopGIF = new THREE.Mesh( geometry2, material3 );
+TopGIF.name = "plane";
+TopGIF.position.set(0.2, 1, -0.07);  //-0.07以上後ろに下げるとオブジェクトに埋まる
+TopGIF.scale.set(5.2, 5.2, 5.2);
+scene.add(TopGIF);
+wrap.add(TopGIF);
+
+//Aboutのゲーム画面
+const AboutTexture = loader.load(
+  // resource URL
+  'texture/About_01.gif',  //'texture/pixcelArtGif_01_2022_0924.gif'
+
+  // onLoad callback
+  function (reader) { },
+
+  function (xhr) { },
+
+  function () {
+    console.error('An error happened.');
+  }
+);
+const geometry3 = new THREE.PlaneGeometry( 1, 1 );
+const About = new THREE.MeshBasicMaterial( {map: AboutTexture,
+  transparent: true} );
+const AboutGIF = new THREE.Mesh( geometry3, About );
+AboutGIF.name = "plane";
+AboutGIF.position.set(0.2, 1.2, -0.09);  //-0.07以上後ろに下げるとオブジェクトに埋まる
+AboutGIF.scale.set(5.2, 5.2, 5.2);
+scene.add(AboutGIF);
+wrap.add(AboutGIF);
+
+//Workのゲーム画面
+const WorkTexture = loader.load(
+  // resource URL
+  'texture/Work_01.gif',  //'texture/pixcelArtGif_01_2022_0924.gif'
+
+  // onLoad callback
+  function (reader) { },
+
+  function (xhr) { },
+
+  function () {
+    console.error('An error happened.');
+  }
+);
+const geometry4 = new THREE.PlaneGeometry( 1, 1 );
+const Work = new THREE.MeshBasicMaterial( {map: WorkTexture,
+  transparent: true} );
+const WorkGIF = new THREE.Mesh( geometry4, Work );
+WorkGIF.name = "plane";
+WorkGIF.position.set(0.2, 1, -0.09);  //-0.07以上後ろに下げるとオブジェクトに埋まる
+WorkGIF.scale.set(5.2, 5.2, 5.2);
+scene.add(WorkGIF);
+wrap.add(WorkGIF);
+
+//Contactのゲーム画面
+const ContactTexture = loader.load(
+  // resource URL
+  'texture/Contact_01.gif',  //'texture/pixcelArtGif_01_2022_0924.gif'
+
+  // onLoad callback
+  function (reader) { },
+
+  function (xhr) { },
+
+  function () {
+    console.error('An error happened.');
+  }
+);
+const geometry5 = new THREE.PlaneGeometry( 1, 1 );
+const Contact = new THREE.MeshBasicMaterial( {map: ContactTexture,
+  transparent: true} );
+const ContactGIF = new THREE.Mesh( geometry5, Contact );
+ContactGIF.name = "plane";
+ContactGIF.position.set(0.2, 1.3, -0.09);  //-0.07以上後ろに下げるとオブジェクトに埋まる
+ContactGIF.scale.set(5.2, 5.2, 5.2);
+scene.add(ContactGIF);
+wrap.add(ContactGIF);
 
 
 //glTFの読み込み
@@ -205,6 +277,12 @@ for(var i=0; i<HeadButton.length; i++){
   HeadButton[i].addEventListener('click', ClickTopButton);
 }
 
+//ロゴをクリックしたらTOPに戻る
+const logoButton = document.getElementsByClassName('logoButton');
+logoButton[0].addEventListener('click', function(){
+  $.scrollify.move(0);
+});
+
 var NowOpenMordal = "";
 //WorkのItemクリック処理
 const Item = document.getElementsByClassName('item');
@@ -252,6 +330,32 @@ $(".js-modal-close").on("click", function () {
 //     }
 //   }, time);
 // }
+function ChangeGIF(pageNum){
+  if(pageNum == 0){
+    TopGIF.position.set(0.2, 1, -0.06);
+    AboutGIF.position.set(0.2, 1.2, -0.08); //Aboutに移行時にゲーム機の画面を切り替える
+    WorkGIF.position.set(0.2, 1, -0.08);
+    ContactGIF.position.set(0.2, 1.3, -0.08);
+  }
+  if(pageNum == 1){
+    TopGIF.position.set(0.2, 1, -0.08);
+    AboutGIF.position.set(0.2, 1.2, -0.06);
+    WorkGIF.position.set(0.2, 1, -0.08);
+    ContactGIF.position.set(0.2, 1.3, -0.08);
+  }
+  if(pageNum == 2){
+    TopGIF.position.set(0.2, 1, -0.08);
+    AboutGIF.position.set(0.2, 1.2, -0.08);
+    WorkGIF.position.set(0.2, 1, -0.06);
+    ContactGIF.position.set(0.2, 1.3, -0.08);
+  }
+  if(pageNum == 3){
+    TopGIF.position.set(0.2, 1, -0.08);
+    AboutGIF.position.set(0.2, 1.2, -0.08);
+    WorkGIF.position.set(0.2, 1, -0.08);
+    ContactGIF.position.set(0.2, 1.3, -0.06);
+  }
+}
 
 //値を滑らかに変化させるEase。
 function SmoothChangeValue(funcName, targetValue){
@@ -339,6 +443,7 @@ function SmoothChangeValue(funcName, targetValue){
 
 //移行先のページによってモデルの状態をセット
 function PageScrollModelSet(){
+  ChangeGIF(current);  //画面移行時にゲーム機の映像も変える
   if(current == 0){
     if(width < 479){
       SmoothChangeValue("z", 21);
@@ -489,7 +594,7 @@ $.scrollify({
     section:".box",
     setHeights: false,
     overflowScroll: true,
-    standardScrollElements: '.box3',  //box3ではScrollifyを使わない
+    // standardScrollElements: '.box3',  //box3ではScrollifyを使わない
     before:function(i,box){  //ページ移動する前に実行
         fromVar = current;  //移行前、何ページにいたのか記録
         current = i;

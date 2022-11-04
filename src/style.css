@@ -210,7 +210,8 @@ section {
 /*Header*/
 header {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
+  padding-top: 2vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -222,10 +223,28 @@ header {
 }
 
 .title {
+  position: fixed;
   color: #fff;
-  margin-left: 30px;
   font-size: 4vmin;
   z-index: 20;
+  left: 3vw;
+  top: 1vh;
+}
+.title img{
+  /* margin-left: 2vw; */
+  /* margin-top: 2vh; */
+  height: 7vmin;
+  width: 7vmin;
+}
+.title .logoButton{
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  height: 7vmin;
+  width: 7vmin;
+  display: block;
+  z-index: 40;
 }
 
 .pc-nav ul {
@@ -236,7 +255,7 @@ header {
 
 .pc-nav li {
   margin: 0 0 0 5vmin;
-  font-size: 18px;
+  font-size: 3vmin; /*18px*/
 }
 
 .HeadButtonItem{
@@ -272,6 +291,7 @@ nav.pc-nav {
 }
 
 .LeftBottom{
+  display: none;  /*読み込み時は非表示*/
   font-family: 'Silkscreen', cursive;
   font-size: 11vmin;
   /* font-weight: 600; */
@@ -297,6 +317,7 @@ nav.pc-nav {
   overflow: hidden;
 }
 
+/* 縦に画面が長いとき */
 @media screen and (max-width: 479px){
   .Profile{
     position: absolute;
