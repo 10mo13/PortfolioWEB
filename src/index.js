@@ -7,6 +7,15 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import { GLTFLoader } from './three-gif-loader/GLTFLoader.js';
 import TrackballControls from 'three-trackballcontrols';
 
+//SetUp
+$("#webgl").append("<style>body{ opacity: 1; }</style>");
+setTimeout(function(){ 
+  $("#webgl").append("<style>header{ z-index: 25; }</style>");
+  $("#webgl").append("<style>.LeftBottom{ opacity: 1; }</style>");
+  $("#webgl").append("<style>.contact, .contactDescription, .mail{ opacity: 1; }</style>");
+}, 900);
+
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -531,7 +540,6 @@ function PageScroll(PageNum){
   
   //TOPページに移動時に実行
   if(PageNum == 0){
-    
     controls.noRotate = false;  //ドラッグ不可に
     $("#webgl").append("<style>canvas{ left: 150%; }</style>"); //一旦画面外へ
     $("#webgl").append("<style>header{ opacity: 0; }</style>");
@@ -551,8 +559,8 @@ function PageScroll(PageNum){
       
     }, 800);
   }
-
-  PageScrollFromNonTop();
+    PageScrollFromNonTop();
+  
 
 }
 
@@ -627,6 +635,7 @@ $.scrollify({
             });
         });
         $('.pagenation li:first-child').find('a').addClass('active');
+
     },
     
 });

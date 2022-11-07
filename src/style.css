@@ -32,6 +32,7 @@ body {
   z-index: 10;
 }
 .background{
+  z-index: 0;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -155,12 +156,13 @@ section {
 }
 .box2{
   height: 100vh;
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 1s;
   /* background: #4CA4CF; */
   /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
 }
 .box3{
+  /* opacity: 0; */
   height: auto;
   opacity: 0;
   transition: opacity 1s;
@@ -168,6 +170,7 @@ section {
   /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
 }
 .box4{
+  opacity: 0;
   /* margin-top: -30vh; */
   height: 100vh;
   top: 0vh;
@@ -218,7 +221,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  z-index: 25;
+  z-index: -10;
   opacity: 0;
 }
 
@@ -291,7 +294,7 @@ nav.pc-nav {
 }
 
 .LeftBottom{
-  display: none;  /*読み込み時は非表示*/
+  /*display: none;*/  /*読み込み時は非表示*/
   font-family: 'Silkscreen', cursive;
   font-size: 11vmin;
   /* font-weight: 600; */
@@ -301,6 +304,7 @@ nav.pc-nav {
   text-align: left;
   line-height: 80%;
   z-index: 35;
+  opacity: 0;
 }
 .box4 .LeftBottom{
   font-size: 8vmin;
@@ -655,6 +659,7 @@ a{
 .contact,
 .contactDescription,
 .mail{
+  opacity: 0;
   /* min-height: -webkit-fill-available; */
   position: relative;
 }
@@ -669,7 +674,7 @@ a{
   .contact{
     font-size: 9vmin;
     font-weight: 600;
-    margin-top: 45vh;
+    margin-top: 38vh;
     text-align: left;
     left: 20%;
     height: 10vmin;
