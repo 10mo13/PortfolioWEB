@@ -1,0 +1,52 @@
+/*TOP*/
+.TopTitle{
+    text-align: center;
+    width: 100%;
+    color: white;
+    z-index: 20;
+    padding-top: 57vh;
+    font-size: 13vmin;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+  }
+  
+  .TopJob{
+    /* position: relative; */
+    font-size: 4vmin;
+    font-weight: 500;
+    top: -1vmin;
+    padding-bottom: 1vh;
+  }
+  
+  .TopButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  rgb(85, 162, 196);
+    height: 7vmin;  /* 60px */
+    width: 38vmin;  /* 300px */
+    border-radius: 50px;
+    z-index: 50;
+  }
+  
+  .TopButton a,
+  .TopButtonItem{
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4vmin;
+    height: 7vmin;
+    width: 100%;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-decoration: none;
+    transition: 0.8s;
+  }
+  .TopButtonItem:hover{
+    background:  rgb(65, 131, 159);
+    font-weight: 900;
+  }

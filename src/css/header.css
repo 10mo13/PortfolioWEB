@@ -1,0 +1,71 @@
+/*Header*/
+header {
+    width: 100%;
+    /* padding: 10px; */
+    padding-top: 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: -10;
+    opacity: 0;
+  }
+  
+  .title {
+    position: fixed;
+    color: #fff;
+    font-size: 4vmin;
+    z-index: 20;
+    left: 3vw;
+    top: 1vh;
+  }
+  .title img{
+    /* margin-left: 2vw; */
+    /* margin-top: 2vh; */
+    height: 7vmin;
+    width: 7vmin;
+  }
+  .title .logoButton{
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    height: 7vmin;
+    width: 7vmin;
+    display: block;
+    z-index: 40;
+  }
+  
+  .pc-nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  
+  .pc-nav li {
+    margin: 0 0 0 5vmin;
+    font-size: 3vmin; /*18px*/
+  }
+  
+  .HeadButtonItem{
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 2.5vmin;  /*18px*/
+    transition: 0.5s;
+    position: relative;
+    /* font-weight: 600; */
+    z-index: 50;
+  }
+  .HeadButtonItem:hover{
+    color: rgb(242, 119, 144);
+    font-weight: 900;
+  }
+  
+  nav.pc-nav {
+    margin: 0 0 0 auto;
+    margin-right: 5vw;
+  }
