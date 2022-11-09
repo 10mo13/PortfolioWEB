@@ -56,6 +56,7 @@ export function modelSet(i){
         
       }
       else if(current == 3){
+        $("#webgl").append("<style>.mail{ pointer-events: auto; }</style>");  //メールのリンクをクリックできるように
           SmoothChangeValue("scene", i=[-0.181, 0.124, 0.357]);
           // wrap.rotation.set(0, 0, 0);
           SmoothChangeValue("wrapRota", i=[0.0, 0.3, -0.4]);
@@ -70,5 +71,9 @@ export function modelSet(i){
           $("#webgl").append("<style>canvas{ top: 40%; }</style>");
           SmoothChangeValue("z", 14); //default 11
         }
+      }
+
+      if(current != 3){
+        $("#webgl").append("<style>.mail{ pointer-events: none; }</style>");   //メールのリンク、クリック禁止
       }
 }
