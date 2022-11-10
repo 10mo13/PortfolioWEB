@@ -2,7 +2,8 @@ import{
     controls,
     width,
     SmoothChangeValue,
-    current
+    current,
+    camera
 }from '../index.js';
 
 export function modelSet(i){
