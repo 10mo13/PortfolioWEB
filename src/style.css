@@ -16,7 +16,6 @@
   box-sizing: border-box;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  /* font-family: "Poppins", sans-serif; */
   -webkit-user-select: none;  /*文字を選択不可に*/
 }
 html {
@@ -26,7 +25,6 @@ html {
 body {
   font-family: PixelFont;
   color: white;
-  /* overflow: hidden; */
 }
 
 .screen{
@@ -46,11 +44,8 @@ body {
 /*Three.jsを描画するキャンバス*/
 canvas {
   position: fixed;
-  /* top: -210px; */
-  /* left: 0; */
   z-index: 31; 
   pointer-events: none;
-  /* position: absolute; */
   top: 35%;
   left: 50%;
   margin-right: -50%;
@@ -59,25 +54,20 @@ canvas {
 }
 
 main {
-  /* position: fixed; */
   width: 100vw;
   height: 100vh;
   z-index: -10;
   justify-content: center;
   text-align: center;
   font-size: 2rem;
-  /* margin-top: 100px; */
-  /* background: linear-gradient(to right, rgb(103, 220, 233), rgb(82, 157, 192)); */
 }
 
 section {
-  /* min-height: 100vh; */
   padding: 20px;
   font-size: 1.5rem;
 }
 
 .flex {
-  /* padding: 50px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +77,6 @@ section {
 .RightBottom{
   font-family: 'Silkscreen', cursive;
   font-size: 12vmin;  /*12vw*/
-  /* font-weight: 600; */
   position: absolute;
   right: 50px;
   bottom: 7vh;
@@ -96,10 +85,8 @@ section {
 }
 
 .LeftBottom{
-  /*display: none;*/  /*読み込み時は非表示*/
   font-family: 'Silkscreen', cursive;
   font-size: 11vmin;
-  /* font-weight: 600; */
   position: fixed;
   left: 50px;
   bottom: 7vmin;

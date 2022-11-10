@@ -33,7 +33,6 @@ renderer.setClearColor(0x000000, 0);
 export const wrap = new THREE.Object3D();
 export let wrapRotaSpeed = 0.01;
 
-
 // オブジェクトを回転させるときに参照したいため、ここで変数を宣言
 var object_game = null;
 
@@ -96,10 +95,6 @@ const TopTexture = loader.load(
     console.error('An error happened.');
   }
 );
-// const material2 = new THREE.MeshBasicMaterial({
-//   map: TopTexture,
-//   transparent: true
-// });
 
 //ゲーム画面のplane
 const geometry2 = new THREE.PlaneGeometry( 1, 1 );
@@ -228,7 +223,6 @@ export function SmoothChangeValue(funcName, targetValue){
   lerp(funcName, targetValue); //import method
 }
 
-
 //移行先のページによってモデルの状態をセット
 function PageScrollModelSet(){
   ChangeGIF(current);  //画面移行時にゲーム機の映像も変える
@@ -263,13 +257,11 @@ function PageScroll(PageNum){
     window.setTimeout(function(){
       $("#webgl").append("<style>canvas{ left: 50%; }</style>");
       $("#webgl").append("<style>canvas{ top: 35%; }</style>");  //高さを初期位置に戻す
-      //$("#webgl").append("<style>canvas{ z-index: 15; }</style>");  //表示優先度を上げてドラッグ可能に
       
     $("#webgl").append("<style>canvas{ pointer-events: auto; }</style>");
       SmoothChangeValue("wrapRotaSpeed", 0.01);  //自動回転速度をセット
       SmoothChangeValue("scene", i=[0,0,0]); //シーンの回転率初期化
       wrap.rotation.set(-0.5, -0.4, -0.4);  //回転率初期化
-        // SmoothChangeValue("z", 17);  //カメラからの距離初期化 default 12
       
     }, 800);
   }
