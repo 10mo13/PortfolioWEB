@@ -54,12 +54,25 @@
       rgba(0, 0, 0, 0) -webkit-calc(100% - 6vh)
     ); */
   }
+
   .container:after {
     content: "";
     display: block;
-    width: 33vmin;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％、一個は33 */
+    width: 66vmin;  /* .boxに指定したwidthと同じ幅を指定する。二個の時は66％、一個は33 */
     height: 0;
   }
+  /* @media screen and (max-width: 796px){
+
+  } */
+  
+  /* @media screen and (min-width: 796px){
+    .container:after {
+      content: "";
+      display: block;
+      width: 58vw;
+      height: 0;
+    }
+  } */
   
   .container-flex-start {
     align-content: flex-start;
@@ -259,4 +272,12 @@
     margin-bottom: 8vmin;
     width: 60%;
     aspect-ratio: 16/9;
+  }
+
+  .blank{
+    margin-top: 10vh;
+  }
+  .centerDiscription a{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: underline;
   }
